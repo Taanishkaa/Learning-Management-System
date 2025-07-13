@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style-admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Admin Dashboard</h2>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </nav>
+    <div class="container">
+        <h1>Manage Courses</h1>
+        <button class="add-course-btn" onclick="openAddCourseModal()">Add Course</button>
+        <table class="courses-table" id="coursesTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Courses will be dynamically loaded here -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Add/Edit Course Modal -->
+    <div class="modal" id="courseModal">
+        <div class="modal-content">
+            <h2 id="modalTitle">Add Course</h2>
+            <form id="courseForm">
+                <input type="hidden" id="courseId">
+                <label for="courseTitle">Title</label>
+                <input type="text" id="courseTitle" required>
+                <label for="courseDescription">Description</label>
+                <textarea id="courseDescription" required></textarea>
+                <button type="submit">Save</button>
+                <button type="button" onclick="closeModal()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>
